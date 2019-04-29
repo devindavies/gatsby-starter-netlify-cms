@@ -1,0 +1,139 @@
+.Message {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+iframe {
+  display: block;
+  height: 100%;
+}
+
+.MessageTitleGroup {
+  padding: 40px 60px 40px 60px;
+  color: #363636;
+  display: grid;
+}
+
+.MessageTitleGroup h1 {
+  font-weight: 600;
+  font-size: 3.5rem;
+}
+
+.MessageTitleGroup h2 {
+  font-weight: 400;
+  font-size: 3rem;
+  font-family: 'Merriweather', serif;
+  font-style: italic;
+}
+
+.MessageTitleGroup p {
+  font-weight: 400;
+  font-size: 1.375rem;
+  font-family: 'Merriweather', serif;
+}
+
+.MessageTitleGroup a {
+  font-weight: 700;
+  font-size: 1.375rem;
+  padding: 15px 30px;
+  border: 4px solid #00897b;
+  border-radius: 10px;
+  color: #00897b;
+}
+
+.WatchButton {
+  margin: 40px auto;
+  width: 100%;
+}
+
+@media screen and (max-width: 1440px) {
+  .Message h1 {
+    font-size: 3rem;
+  }
+
+  .Message h2 {
+    font-size: 2.25rem;
+  }
+
+  .Message p {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 1260px) {
+  .Message h1 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .MessageTitleGroup {
+    padding: 30px 40px 40px 40px;
+  }
+  .MessageTitleGroup h1 {
+    font-size: 2rem;
+  }
+
+  .MessageTitleGroup h2 {
+    font-size: 2rem;
+  }
+
+  .MessageTitleGroup p {
+    font-size: 1rem;
+  }
+
+  .MessageTitleGroup a {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .WatchButton {
+    text-align: center;
+  }
+  .MessageTitleGroup p {
+    font-size: 0.75rem;
+  }
+  .MessageTitleGroup h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .Message {
+    height: auto;
+    justify-content: start;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 56.25vw;
+  }
+
+  .MessageTitleGroup {
+    grid-row-start: 1;
+  }
+
+  .MessageVideo {
+    grid-row-start: 2;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .MessageTitleGroup h1 {
+    font-size: 1.5rem;
+  }
+
+  .MessageTitleGroup h2 {
+    font-size: 1.125rem;
+  }
+
+  .MessageTitleGroup p {
+    font-size: 0.8rem;
+  }
+
+  .MessageTitleGroup a {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+}

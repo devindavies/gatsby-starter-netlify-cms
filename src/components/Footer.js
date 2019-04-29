@@ -1,115 +1,169 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import styled from 'styled-components'
+import background from '../images/Web - x1440/trianglify.svg'
 
-import logo from '../img/logo.svg'
-import facebook from '../img/social/facebook.svg'
-import instagram from '../img/social/instagram.svg'
-import twitter from '../img/social/twitter.svg'
-import vimeo from '../img/social/vimeo.svg'
+const FooterContainer = styled.div`
+  background: url(${background});
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: #ffffff;
+  font-size: 2rem;
+  font-weight: 700;
+  max-width: 100%;
+  white-space: nowrap;
 
-const Footer = class extends React.Component {
-  render() {
-    return (
-      <footer className="footer has-background-black has-text-white-ter">
-        <div className="content has-text-centered">
-          <img
-            src={logo}
-            alt="Kaldi"
-            style={{ width: '14em', height: '10em' }}
-          />
-        </div>
-        <div className="content has-text-centered has-background-black has-text-white-ter">
-          <div className="container has-background-black has-text-white-ter">
-            <div className="columns">
-              <div className="column is-4">
-                <section className="menu">
-                  <ul className="menu-list">
-                    <li>
-                      <Link to="/" className="navbar-item">
-                        Home
-                      </Link>
-                    </li>
-                    <li>
-                      <Link className="navbar-item" to="/about">
-                        About
-                      </Link>
-                    </li>
-                    <li>
-                      <Link className="navbar-item" to="/products">
-                        Products
-                      </Link>
-                    </li>
-                    <li>
-                      <Link className="navbar-item" to="/contact/examples">
-                        Form Examples
-                      </Link>
-                    </li>
-                    <li>
-                      <a
-                        className="navbar-item"
-                        href="/admin/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        Admin
-                      </a>
-                    </li>
-                  </ul>
-                </section>
-              </div>
-              <div className="column is-4">
-                <section>
-                  <ul className="menu-list">
-                    <li>
-                      <Link className="navbar-item" to="/blog">
-                        Latest Stories
-                      </Link>
-                    </li>
-                    <li>
-                      <Link className="navbar-item" to="/contact">
-                        Contact
-                      </Link>
-                    </li>
-                  </ul>
-                </section>
-              </div>
-              <div className="column is-4 social">
-                <a title="facebook" href="https://facebook.com">
-                  <img
-                    src={facebook}
-                    alt="Facebook"
-                    style={{ width: '1em', height: '1em' }}
-                  />
-                </a>
-                <a title="twitter" href="https://twitter.com">
-                  <img
-                    className="fas fa-lg"
-                    src={twitter}
-                    alt="Twitter"
-                    style={{ width: '1em', height: '1em' }}
-                  />
-                </a>
-                <a title="instagram" href="https://instagram.com">
-                  <img
-                    src={instagram}
-                    alt="Instagram"
-                    style={{ width: '1em', height: '1em' }}
-                  />
-                </a>
-                <a title="vimeo" href="https://vimeo.com">
-                  <img
-                    src={vimeo}
-                    alt="Vimeo"
-                    style={{ width: '1em', height: '1em' }}
-                  />
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </footer>
-    )
+  @media (max-width: 1440px) {
+    p {
+      font-size: 1.75rem;
+    }
   }
-}
+
+  @media (max-width: 1024px) {
+    p {
+      font-size: 1.25rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    p {
+      font-size: 1rem;
+    }
+  }
+`
+
+const FooterGroup = styled.div`
+  display: flex;
+  padding-top: 30px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    .separator {
+      display: none;
+    }
+  }
+`
+
+const FooterBox = styled.div`
+  flex: 1;
+  display: flex;
+  justify-content: center;
+
+  &:nth-child(3) {
+    flex: 0;
+  }
+
+  &:nth-child(3) > p {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  &:first-child > p {
+    margin-left: auto;
+    margin-right: 10px;
+  }
+
+  &:last-child > p {
+    margin-right: auto;
+    margin-left: 10px;
+  }
+
+  @media (max-width: 768px) {
+    p {
+      font-size: 1rem;
+    }
+    &:first-child > p {
+      margin: auto;
+    }
+    &:last-child > p {
+      margin: auto;
+    }
+  }
+`
+
+const SocialGroup = styled.div`
+  height: 100%;
+  margin: 30px;
+  display: grid;
+  grid-column: 3;
+  grid-template-columns: repeat(3, auto);
+  align-items: center;
+  justify-content: center;
+
+  a {
+    border: none;
+    padding: 0 1rem;
+  }
+
+  img {
+    height: 30px;
+  }
+`
+const SubContainer = styled.div`
+  background-color: #2b2b3a;
+  height: 100%;
+  hr {
+    width: 90%;
+    border-color: #00897b;
+  }
+
+  img {
+    margin: 20px 0 0 10vw;
+  }
+
+  p {
+    font-size: 0.2rem;
+    margin: 0 10vw;
+  }
+`
+
+const SubGroup = styled.div`
+  padding: 30px 0;
+  color: #00897b;
+`
+
+const Footer = props => (
+  <FooterContainer>
+    <FooterGroup>
+      <FooterBox>
+        <p>Sundays @ 10:45am</p>
+      </FooterBox>
+
+      <p className="separator">|</p>
+
+      <FooterBox>
+        <p>6 Meadowhill Ct. South Easton, MA</p>
+      </FooterBox>
+
+      <p className="separator">|</p>
+
+      <FooterBox>
+        <p>508-230-9504</p>
+      </FooterBox>
+    </FooterGroup>
+    <SocialGroup>
+      <a href="https://twitter.com/nhcc">
+        <img src={require('../images/social/twitter.svg')} />
+      </a>
+      <a href="https://www.facebook.com/NewHopeChristianChapelSouthEastonMA/">
+        <img src={require('../images/social/facebook.svg')} />
+      </a>
+      <a href="https://www.instagram.com/newhopechristianchapel/">
+        <img src={require('../images/social/instagram.svg')} />
+      </a>
+    </SocialGroup>
+
+    <SubContainer>
+      <SubGroup>
+        <hr />
+        <img
+          src={require('../images/Logo/Green (with text).svg')}
+          height="45"
+        />
+        <p>Copyright © 2019 New Hope Christian Chapel. All rights reserved.</p>
+      </SubGroup>
+    </SubContainer>
+  </FooterContainer>
+)
 
 export default Footer
